@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres_vehicle:
+    image: postgres:16
+    container_name: postgres_vehicle
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vehiclesdb
+    ports:
+      - '5434:5432'
+    volumes:
+      - pg_vehicle_data:/var/lib/postgresql/data
+
+volumes:
+  pg_vehicle_data:
