@@ -9,7 +9,7 @@ export default function UsersPage() {
   const { data, isLoading } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:4000/users");
+      const res = await axios.get("http://localhost:5000/users");
       return res.data;
     },
   });
